@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCore", "BlogCore\BlogCore.csproj", "{B8890E05-C7DB-42FB-9FF1-293FB0AA7CC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCore.AccesosDatos", "BlogCore.AccesosDatos\BlogCore.AccesosDatos.csproj", "{DEEF6B47-1298-4083-9E9F-84B0838A21B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCore,Models", "BlogCore,Models\BlogCore,Models.csproj", "{3F9B82E1-6E29-4640-B671-3BF18AB37F17}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCore.Models", "BlogCore,Models\BlogCore.Models.csproj", "{3F9B82E1-6E29-4640-B671-3BF18AB37F17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCore.Utilidades", "BlogCore.Utilidades\BlogCore.Utilidades.csproj", "{A70F7F75-0BCE-48A3-AC44-187E6CA6D959}"
 EndProject
