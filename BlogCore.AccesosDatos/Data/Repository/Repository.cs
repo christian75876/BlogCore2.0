@@ -81,11 +81,20 @@ namespace BlogCore.AccesosDatos.Data.Repository
         public void Remove(int id)
         {
             T entityToRemove = dbSet.Find(id);
+            if(entityToRemove != null)
+            {
+                dbSet.Remove(entityToRemove);
+            }
         }
 
         public void Remove(T entity)
         {
             dbSet.Remove(entity);
+        }
+
+        public void Save()
+        {
+            Context.SaveChanges();
         }
     }
 }

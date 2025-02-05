@@ -25,5 +25,7 @@ namespace BlogCore.AccesosDatos.Data.Repository.IRepository
         void Add(T entity);
         void Remove(int id);
         void Remove(T entity);
+
+        void Save();
     }
 }
