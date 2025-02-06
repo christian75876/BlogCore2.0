@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BlogCore.Models;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using BlogCore_Models;
 
 namespace BlogCore.AccesosDatos.Data.Repository.IRepository
 {
-    public interface ICategoriaRepository : IRepository<Categoria>
+    public interface IArticuloRepository : IRepository<Articulo>
     {
-        void Update(Categoria categoria);
-
-        IEnumerable<SelectListItem> GetListaCategorias();
+        void Update(Articulo articulo);
     }
 }

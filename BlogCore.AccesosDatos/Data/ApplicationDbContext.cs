@@ -1,4 +1,5 @@
 ﻿using BlogCore.Models;
+using BlogCore_Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,5 +13,7 @@ namespace BlogCore.Data
         }
 
         public DbSet<Categoria> Categoria { get; set; }
+
+        public DbSet<Articulo> Articulo { get; set; }
     }
 }

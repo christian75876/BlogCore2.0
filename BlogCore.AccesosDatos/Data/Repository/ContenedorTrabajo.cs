@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BlogCore.AccesosDatos.Data.Repository.IRepository;
 using BlogCore.Data;
+using BlogCore_Models;
 
 namespace BlogCore.AccesosDatos.Data.Repository
 {
@@ -17,9 +18,11 @@ namespace BlogCore.AccesosDatos.Data.Repository
         {
             _db = db;
             Categoria = new CategoriaRepository(_db);
+            Articulo = new ArticuloRepository(_db);
         }
 
         public ICategoriaRepository Categoria {  get; private set; }
+        public IArticuloRepository Articulo { get; private set; }
 
         public void Dispose()
         {

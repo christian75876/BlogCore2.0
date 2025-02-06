@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BlogCore.AccesosDatos.Data.Repository.IRepository;
 using BlogCore.Data;
 using BlogCore.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
@@ -100,6 +101,15 @@ namespace BlogCore.AccesosDatos.Data.Repository
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public IEnumerable<SelectListItem> GetListaCategorias()
+        {
+            return _db.Categoria.Select(i => new SelectListItem()
+            {
+                Text = i.Nombre,
+                Value = i.Id.ToString()
+            });
         }
 
         //public void Update(Categoria categoria)
