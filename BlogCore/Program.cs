@@ -1,5 +1,6 @@
 using BlogCore.AccesosDatos.Data.Repository;
 using BlogCore.AccesosDatos.Data.Repository.IRepository;
+using BlogCore.Config;
 using BlogCore.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -7,13 +8,11 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("ConexionSQL") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddConnection(builder.Configuration);
 builder.Services.AddControllersWithViews();
 
 //Agregar c0ontenedor de trabajo al contenedor IoC de inyeccion de dependencias.
