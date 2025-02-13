@@ -25,8 +25,19 @@ namespace BlogCore.Areas.Cliente.Controllers
                 Sliders = _contenedorTrabajo.Slider.GetAll(),
                 ListaArticulos = _contenedorTrabajo.Articulo.GetAll()
             };
-
+            ViewBag.IsHome = true;
             return View(homeVM);
+        }
+
+        [HttpGet]
+        public IActionResult Detalle(int id)
+        {
+            var articuloDesdeBd = _contenedorTrabajo.Articulo.Get(id);
+            if (articuloDesdeBd == null)
+            {
+                return NotFound("No se encuentra este articulo");
+            }
+            return View(articuloDesdeBd);
         }
 
         public IActionResult Privacy()
