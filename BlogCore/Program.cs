@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -44,6 +44,11 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{area=Cliente}/{controller=Home}/{action=Index}/{id?}");
+
+app.MapGet("/", context => {
+    context.Response.Redirect("Identity/Account/Login");
+    return Task.CompletedTask;
+});
 app.MapRazorPages();
 
 app.Run();
