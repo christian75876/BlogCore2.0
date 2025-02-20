@@ -8,9 +8,12 @@ public class ApplicationUser : IdentityUser
     [Required(ErrorMessage = "El nombre es requerido")]
     public string Nombre { get; set; }
     
-    [Required(ErrorMessage = "El correo es requerido")]
-    public string Correo { get; set; }
+    [Required(ErrorMessage = "La direccion es requerido")]
+    public string Direccion { get; set; }
     
-    [Required(ErrorMessage = "La contraseña es obligatoria")]
-    public string Contrasena { get; set; }
+    [Required(ErrorMessage = "La ciudad es obligatoria")]
+    public string Ciudad { get; set; }
+    
+    [Required(ErrorMessage = "El país es obligatorio")]
+    public string Pais { get; set; }
 }
