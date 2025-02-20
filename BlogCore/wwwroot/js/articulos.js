@@ -17,13 +17,13 @@ function cargarDatatable() {
             { "data": "nombre", "width": "20%" },
             { "data": "categoria.nombre", "width": "15%" },
             {
-                "data": "urlImagen", 
+                "data": "urlImagen",
                 "render": function (imagen) {
                     console.log(imagen);
                     return `<img src="../${imagen}" style="width: 120px"/>`
                 }
             },
-            { "data": "fechaCreacion", "width": "30%" },
+            { "data": "fechaCreacion", "width": "20%" },
             {
                 "data": "id",
                 "render": function (data) {
@@ -37,7 +37,7 @@ function cargarDatatable() {
                                 </a>
                           </div>
                          `;
-                }, "width": "30%"
+                }, "width": "40%"
             }
         ],
         "language": {
