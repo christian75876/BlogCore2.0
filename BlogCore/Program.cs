@@ -1,3 +1,4 @@
+using BlogCore_Models;
 using BlogCore.AccesosDatos.Data.Repository;
 using BlogCore.AccesosDatos.Data.Repository.IRepository;
 using BlogCore.Config;
@@ -6,14 +7,19 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("ApplicationDbContextConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 builder.Services.AddConnection(builder.Configuration);
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 //Agregar c0ontenedor de trabajo al contenedor IoC de inyeccion de dependencias.
 builder.Services.AddScoped<IContenedorTrabajo, ContenedorTrabajo>();
