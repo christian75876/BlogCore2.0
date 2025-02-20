@@ -20,3 +20,11 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 400px;
+    object-position: center center; 
+}

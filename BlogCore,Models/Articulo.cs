@@ -15,7 +15,7 @@ namespace BlogCore_Models
         public int Id { get; set; }
 
         [Required(ErrorMessage ="El nombre es requerido")]
-        [Display(Name = "Nombre del Articulo")]
+        [Display(Name = "Nombre de la actividad")]
         public string? Nombre { get; set; }
 
         [Required(ErrorMessage = "La descripcion es obligatoria")]
