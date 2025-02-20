@@ -28,3 +28,9 @@ body {
     max-height: 400px;
     object-position: center center; 
 }
+
+.table {
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
