@@ -4,5 +4,10 @@
     ViewData["Title"] = "Confirm email";
 }
 
+@section Header
+{
+    <Partial name="_Header"/>
+}
+
 <h1>@ViewData["Title"]</h1>
 <partial name="_StatusMessage" model="Model.StatusMessage" />
